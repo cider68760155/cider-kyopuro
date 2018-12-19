@@ -46,6 +46,11 @@ void yn(bool b) {
 	else say("No");
 }
 
+void YN(bool b) {
+	if (b)say("YES");
+	else say("NO");
+}
+
 template<typename T>
 void maxi(T &a, T b) {
 	a = max(a, b);
@@ -54,6 +59,10 @@ void maxi(T &a, T b) {
 template<typename T>
 void mini(T &a, T b) {
 	a = min(a, b);
+}
+
+void exact_say(double x) {
+	cout << setprecision(numeric_limits<double>::max_digits10) << x << endl;
 }
 
 int main() {
