@@ -11,7 +11,6 @@
 #define maked(d) double d; cin >> d;
 #define makev(v, N) vi v(N); rep(N)cin >> v[i];
 #define mod 1000000007
-#define re return 0
 #define distance(x1,y1,x2,y2) sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
 
 using namespace std;
@@ -42,6 +41,11 @@ void say(vector<T> s) {
 }
 
 void yn(bool b) {
+	if (b)say("yes");
+	else say("no");
+}
+
+void Yn(bool b) {
 	if (b)say("Yes");
 	else say("No");
 }
