@@ -69,6 +69,11 @@ void exact_say(double x) {
 	cout << setprecision(numeric_limits<double>::max_digits10) << x << endl;
 }
 
+template<class T> void getVector(vector<T>& v) {
+    for (int i = 0; i < v.size(); ++i)
+        cin >> v[i];
+}
+
 int main() {
 
 }
