@@ -11,7 +11,7 @@
 #define maked(d) double d; cin >> d;
 #define makev(v, N) vi v(N); rep(N)cin >> v[i];
 #define mod 1000000007
-#define distance(x1,y1,x2,y2) sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+//#define int longlong
 
 using namespace std;
 using ll = long long int;
@@ -74,6 +74,6 @@ template<class T> void getVector(vector<T>& v) {
         cin >> v[i];
 }
 
-int main() {
+signed main() {
 
 }
