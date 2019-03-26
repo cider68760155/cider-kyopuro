@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+//#define int long long
 #define FOR(i, a, b) for (int i = a; i < b; ++i)
 #define rep(N) for (int i = 0; i < N; ++i)
 #define Rep(a, b) for (int i = a; i < b; ++i)
@@ -6,15 +7,13 @@
 #define all(v) v.begin(), v.end()
 #define rev(v) v.rbegin(), v.rend()
 #define makei(N) int N; cin >> N;
-#define makel(N) ll N; cin >> N;
 #define makes(s) string s; cin >> s;
 #define maked(d) double d; cin >> d;
 #define makev(v, N) vi v(N); rep(N)cin >> v[i];
 #define mod 1000000007
-//#define int longlong
 
 using namespace std;
-using ll = long long int;
+using ll = long long;
 using vi = vector<int>;
 using vvi = vector<vector<int>>;
 using vll = vector<ll>;
@@ -40,6 +39,16 @@ void say(vector<T> s) {
 	cout << "\n";
 }
 
+template<typename T>
+void say(vector<T> s, char r) {
+	auto itr = s.begin();
+	cout << *(itr++);
+	while (itr != s.end()) {
+		cout << r << *(itr++);
+	}
+	cout << "\n";
+}
+
 void yn(bool b) {
 	if (b)say("yes");
 	else say("no");
@@ -56,12 +65,12 @@ void YN(bool b) {
 }
 
 template<typename T>
-void maxi(T &a, T b) {
+void maxi(T& a, T b) {
 	a = max(a, b);
 }
 
 template<typename T>
-void mini(T &a, T b) {
+void mini(T& a, T b) {
 	a = min(a, b);
 }
 
@@ -69,9 +78,26 @@ void exact_say(double x) {
 	cout << setprecision(numeric_limits<double>::max_digits10) << x << endl;
 }
 
-template<class T> void getVector(vector<T>& v) {
-    for (int i = 0; i < v.size(); ++i)
-        cin >> v[i];
+template<typename T>
+vector<vector<T>> fill_vector(int h, int w, T val) {
+	vector<vector<T>> ret;
+	vector<T> v(w, val);
+	rep(h)ret.push_back(v);
+	return ret;
+}
+
+template<typename T>
+T max(vector<T> v) {
+	T ret = v[0];
+	Rep(1, v.size())maxi(ret, v[i]);
+	return ret;
+}
+
+template<typename T>
+T min(vector<T> v) {
+	T ret = v[0];
+	Rep(1, v.size())mini(ret, v[i]);
+	return ret;
 }
 
 signed main() {
