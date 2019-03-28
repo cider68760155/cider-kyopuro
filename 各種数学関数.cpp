@@ -16,3 +16,10 @@ template<typename T>
 T dif(T x1, T x2, T y1, T y2) {
 	return abs(x1 - x2) + abs(y1 - y2);
 }
+
+//Nの10^iの位の数字を返す。
+int kurai(int n, int i) {
+	string s = to_string(n);
+	if (i >= s.size())return 0;
+	return s[s.size() - i - 1] - '0';
+}
