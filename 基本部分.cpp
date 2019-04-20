@@ -87,14 +87,14 @@ vector<vector<T>> fill_vector(int h, int w, T val) {
 }
 
 template<typename T>
-T max(vector<T> v) {
+T maxi(vector<T> v) {
 	T ret = v[0];
 	Rep(1, v.size())maxi(ret, v[i]);
 	return ret;
 }
 
 template<typename T>
-T min(vector<T> v) {
+T mini(vector<T> v) {
 	T ret = v[0];
 	Rep(1, v.size())mini(ret, v[i]);
 	return ret;
