@@ -6,10 +6,10 @@
 #define For(i, N) for (int i = 0; i < N; ++i)
 #define all(v) v.begin(), v.end()
 #define rev(v) v.rbegin(), v.rend()
-#define makei(N) int N; cin >> N;
-#define makes(s) string s; cin >> s;
-#define maked(d) double d; cin >> d;
-#define makev(v, N) vi v(N); rep(N)cin >> v[i];
+#define mi(N) int N; cin >> N;
+#define ms(s) string s; cin >> s;
+#define md(d) double d; cin >> d;
+#define mv(v, N) vi v(N); rep(N)cin >> v[i];
 #define mod 1000000007
 
 using namespace std;
@@ -64,6 +64,11 @@ void YN(bool b) {
 	else say("NO");
 }
 
+void Yay(bool b) {
+	if (b)say("Yay!");
+	else say(":(");
+}
+
 template<typename T>
 void maxi(T& a, T b) {
 	a = max(a, b);
@@ -86,20 +91,6 @@ vector<vector<T>> fill_vector(int h, int w, T val) {
 	return ret;
 }
 
-template<typename T>
-T maxi(vector<T> v) {
-	T ret = v[0];
-	Rep(1, v.size())maxi(ret, v[i]);
-	return ret;
-}
-
-template<typename T>
-T mini(vector<T> v) {
-	T ret = v[0];
-	Rep(1, v.size())mini(ret, v[i]);
-	return ret;
-}
-
 signed main() {
-
+	
 }
