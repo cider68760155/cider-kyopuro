@@ -1,16 +1,21 @@
 #include<bits/stdc++.h>
 //#define int long long
+
 #define FOR(i, a, b) for (int i = a; i < b; ++i)
 #define rep(N) for (int i = 0; i < N; ++i)
 #define Rep(a, b) for (int i = a; i < b; ++i)
 #define For(i, N) for (int i = 0; i < N; ++i)
+
 #define all(v) v.begin(), v.end()
 #define rev(v) v.rbegin(), v.rend()
+
 #define mi(N) int N; cin >> N;
 #define ms(s) string s; cin >> s;
 #define md(d) double d; cin >> d;
 #define mv(v, N) vi v(N); rep(N)cin >> v[i];
+
 #define mod 1000000007
+#define is_out_of_grid(x, y) x < 0 || y < 0 || x >= h || y >= w
 
 using namespace std;
 using ll = long long;
@@ -92,5 +97,5 @@ vector<vector<T>> fill_vector(int h, int w, T val) {
 }
 
 signed main() {
-	
+
 }

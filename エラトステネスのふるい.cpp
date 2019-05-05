@@ -37,12 +37,13 @@ void say(T1 s1, T2 s2) {
 }
 
 int main() {
-	const int N = (int)1e9;
+	const int N = (int)1e8;
 	ofstream ofs("sosu.txt");
 	vb v;
 	v.reserve(N + 1);
 	rep(N + 1)v.push_back(true);
 	ofs << 2;
+	for (int i = 2; i <= N; i += 2) v[j] = false;
 	for (int i = 3; i <= N; ++i) {
 		if (v[i]) {
 			ofs << "," << i;
