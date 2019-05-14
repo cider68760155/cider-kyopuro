@@ -12,8 +12,8 @@ void add_edge(int from, int to, int cap) {
 int dfs(int v, int t, int f) {
 	if (v == t)return f;
 	used[v] = true;
-	rep(G[v].size()) {
-		edge &e = G[v][i];
+	for (int i = 0; i < G[v].size(); ++i) {
+		edge& e = G[v][i];
 		if (!used[e.to] && e.cap > 0) {
 			int d = dfs(e.to, t, min(f, e.cap));
 			if (d > 0) {

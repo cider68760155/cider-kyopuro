@@ -6,7 +6,7 @@ bool used[MAX_V];
 int V;
 
 int prim() {
-	rep(V) {
+	for (int i = 0; i < V; ++i) {
 		mincost[i] = INF;
 		used[i] = false;
 	}
@@ -14,14 +14,14 @@ int prim() {
 	int res = 0;
 	while (true) {
 		int v = -1;
-		rep(V) {
+		for (int i = 0; i < V; ++i) {
 			if (!used[i] && (v == -1 || mincost[i] < mincost[v]))v = i;
 		}
 		if (v == -1)break;
 		used[v] = true;
 		res += mincost[v];
 
-		rep(V) {
+		for (int i = 0; i < V; ++i) {
 			mincost[i] = min(mincost[i], cost[v][i]);
 		}
 	}

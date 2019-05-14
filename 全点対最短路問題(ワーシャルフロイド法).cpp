@@ -6,9 +6,9 @@ int d[maxN][maxN];//‚»‚ê‚¼‚ê‚Ì•Ó‚Ìd‚İ‚Å‰Šú‰»Ad[i][i]=0
 int previ[maxN];
 
 void warshall_floyd() {
-	For(i, N) {
-		For(j, N) {
-			For(k, N) {
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) {
+			for (int k = 0; k < N; ++k) {
 				if (d[i][j] <= d[i][k] + d[k][j]) {
 					previ[i] = j;
 					previ[j] = i;
@@ -21,14 +21,4 @@ void warshall_floyd() {
 			}
 		}
 	}
-}
-
-int main() {
-	cin >> N >> M;
-	rep(M) {
-		int a, b, c;
-		cin >> a >> b >> c;
-		d[a][b] = d[b][a] = c;
-	}
-	rep(N)d[i][i] = 0;
 }

@@ -1,10 +1,10 @@
 int N;
 int M;
 int i = 1;
-vi lab(N), lowpt(N), parent(N);
-vvi BC;
-vi bc;
-vi L(M), R(M);
+vector<int> lab(N), lowpt(N), parent(N);
+vector<vector<int>> BC;
+vector<int> bc;
+vector<int> L(M), R(M);
 deque<int> Edge_stack;
 
 void DFS_BCC(int v)
@@ -12,7 +12,7 @@ void DFS_BCC(int v)
 	lab[v] = i;
 	lowpt[v] = i;
 	++i;
-	rep(N)
+	for (int i = 0; i < N; ++i)
 	{
 		int w = -1;
 		if (L[i] == v)
@@ -53,11 +53,11 @@ int main()
 {
 	bool flag;
 	Edge_stack.clear();
-	rep(N) lab[i] = 0;
+	for (int i = 0; i < N; ++i) lab[i] = 0;
 	do
 	{
 		flag = false;
-		rep(N) if (lab[i] == 0)
+		for (int i = 0; i < N; ++i) if (lab[i] == 0)
 		{
 			flag = true;
 			parent[i] = -1;

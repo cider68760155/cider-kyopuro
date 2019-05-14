@@ -1,12 +1,12 @@
 class union_find_tree {
 public:
-	int N;//—v‘f”
-	vi parent;
-	vi hight;
+	int n;//—v‘f”
+	vector<int> parent;
+	vector<int> hight;
 
-	union_find_tree(int n) {
-		N = n;
-		rep(N) {
+	union_find_tree(int sz) {
+		n = sz;
+		for (int i = 0; i < n; ++i) {
 			parent.push_back(i);
 			hight.push_back(0);
 		}
