@@ -1,4 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<bits/stdc++.h>
+#include <boost/multiprecision/cpp_int.hpp>
 //#define int long long
 
 #define FOR(i, a, b) for (int i = a; i < b; ++i)
@@ -15,7 +17,7 @@
 #define mv(v, N) vi v(N); rep(N)cin >> v[i];
 
 #define mod 1000000007
-#define is_out_of_grid(x, y) x < 0 || y < 0 || x >= h || y >= w
+#define out_of_grid(x, y) x < 0 || y < 0 || x >= h || y >= w
 
 using namespace std;
 using ll = long long;
@@ -28,6 +30,9 @@ using vs = vector<string>;
 using pii = pair<int, int>;
 using pis = pair<int, string>;
 using msi = map<string, int>;
+
+namespace mp = boost::multiprecision;
+using INT = mp::cpp_int;
 
 template<typename T>
 void say(T s) {
