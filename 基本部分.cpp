@@ -89,10 +89,6 @@ void mini(T& a, T b) {
 	a = min(a, b);
 }
 
-void exact_say(double x) {
-	cout << setprecision(numeric_limits<double>::max_digits10) << x << endl;
-}
-
 template<typename T>
 vector<vector<T>> fill_vector(int h, int w, T val) {
 	vector<vector<T>> ret;
@@ -102,5 +98,5 @@ vector<vector<T>> fill_vector(int h, int w, T val) {
 }
 
 signed main() {
-
+	cout.precision(16);
 }
