@@ -30,4 +30,22 @@ public:
 			node[x] = min(node[2 * x + 1], node[2 * x + 2]);
 		}
 	}
+
+	int getmin(int a, int b, int k = 0, int l = 0, int r = -1) {
+		// 最初に呼び出されたときの対象区間は [0, n)
+		if (r < 0) r = n;
+
+		// 要求区間と対象区間が交わらない -> 適当に返す
+		if (r <= a || b <= l) return INF;
+
+		// 要求区間が対象区間を完全に被覆 -> 対象区間を答えの計算に使う
+		if (a <= l && r <= b) return node[k];
+
+		// 要求区間が対象区間の一部を被覆 -> 子について探索を行う
+		// 左側の子を vl ・ 右側の子を vr としている
+		// 新しい対象区間は、現在の対象区間を半分に割ったもの
+		int vl = getmin(a, b, 2 * k + 1, l, (l + r) / 2);
+		int vr = getmin(a, b, 2 * k + 2, (l + r) / 2, r);
+		return min(vl, vr);
+	}
 };
