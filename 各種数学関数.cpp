@@ -4,11 +4,13 @@ T kaijou(T x) {
 	else return x * kaijou(x - 1);
 }
 
-//組み合わせ。遅かったから、いつかメモ化したい
-template <typename T>
-T C(T x, T y) {
+//組み合わせ(DP)
+int nmax = 150;
+int c[nmax][nmax];
+ll C(ll x, ll y) {
+	if (c[x][y] > 0)return c[x][y];
 	if (y == 0 || x == y)return 1;
-	else return C(x - 1, y - 1) + C(x - 1, y);
+	return c[x][y] = C(x - 1, y - 1) + C(x - 1, y);
 }
 
 //マンハッタン距離
@@ -23,3 +25,30 @@ int kurai(int n, int i) {
 	if (i >= s.size())return 0;
 	return s[s.size() - i - 1] - '0';
 }
+
+//組み合わせ(https://drken1215.hatenablog.com/entry/2018/06/08/210000)
+struct combination {
+	const int MAX = 510000;
+	const int MOD;
+	vector<long long> fac, finv, inv;
+
+	combination(int mod) :MOD(mod) {
+		fac.resize(MAX);
+		finv.resize(MAX);
+		inv.resize(MAX);
+		fac[0] = fac[1] = 1;
+		finv[0] = finv[1] = 1;
+		inv[1] = 1;
+		for (int i = 2; i < MAX; i++) {
+			fac[i] = fac[i - 1] * i % MOD;
+			inv[i] = MOD - inv[MOD % i] * (MOD / i) % MOD;
+			finv[i] = finv[i - 1] * inv[i] % MOD;
+		}
+	}
+
+	long long COM(int n, int k) {
+		if (n < k) return 0;
+		if (n < 0 || k < 0) return 0;
+		return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
+	}
+};
