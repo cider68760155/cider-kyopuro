@@ -1,19 +1,17 @@
-/*
-N以下の素数をコンマ区切りでファイル	出力する
-*/
-
-int main() {
-	const int N = (int)1e8;
-	ofstream ofs("sosu.txt");
-	vb v;
-	v.reserve(N + 1);
-	for (int i = 0; i < N + 1; ++i)v.push_back(true);
-	ofs << 2;
-	for (int i = 2; i <= N; i += 2) v[j] = false;
-	for (int i = 3; i <= N; ++i) {
+//n以下の素数を求める
+template<typename T>
+vector<T> eratosthenes(T n) {
+	vector<T> ret;
+	vector<bool> v;
+	v.reserve(n + 1);
+	for (T i = 0; i < n + 1; ++i)v.push_back(true);
+	ret.push_back(2);
+	for (T i = 2; i <= n; i += 2) v[i] = false;
+	for (T i = 3; i <= n; ++i) {
 		if (v[i]) {
-			ofs << "," << i;
-			for (int j = i; j <= N; j += i) v[j] = false;
+			ret.push_back(i);
+			for (T j = i; j <= n; j += i) v[j] = false;
 		}
 	}
+	return ret;
 }
